@@ -37,7 +37,7 @@ let allMusic = [
   {
     name: "Merindukanmu",
     artist: "D’MASIV",
-    img: "music-4",
+    img: "music-5",
     src: "music-5",
   },
   {
