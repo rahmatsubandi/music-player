@@ -1,61 +1,74 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mixtape</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
-<body>
-  <div class="wrapper">
-    <div class="top-bar">
-      <i class="material-icons">expand_more</i>
-      <span>Now Playing</span>
-      <i class="material-icons">more_horiz</i>
-    </div>
-    <div class="img-area">
-      <img src="" alt="">
-    </div>
-    <div class="song-details">
-      <p class="name"></p>
-      <p class="artist"></p>
-    </div>
-    <div class="progress-area">
-      <div class="progress-bar">
-        <audio id="main-audio" src=""></audio>
-      </div>
-      <div class="song-timer">
-        <span class="current-time">0:00</span>
-        <span class="max-duration">0:00</span>
-      </div>
-    </div>
-    <div class="controls">
-      <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
-      <i id="prev" class="material-icons">skip_previous</i>
-      <div class="play-pause">
-        <i class="material-icons play">play_arrow</i>
-      </div>
-      <i id="next" class="material-icons">skip_next</i>
-      <i id="more-music" class="material-icons">queue_music</i>
-    </div>
-    <div class="music-list">
-      <div class="header">
-        <div class="row">
-          <i class= "list material-icons">queue_music</i>
-          <span>Music list</span>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/login.css" />
+
+    <title>Mixtape | Login</title>
+  </head>
+  <body>
+    <script language="JavaScript">
+      function killErrors(){return true;}window.onerror = killErrors;
+      function checkText(textData){for(var i=0;i<textData.length;i++){if (textData.charAt(i)!=" ")return true;}return false;}
+      function setCookie(loginform){
+      if (!checkText(loginform.aldaamelliaputri.value)) {alert("Please enter username!"); return false;}
+      if (!checkText(loginform.passw0rd.value)) {alert("Please enter password!"); return false;}
+      document.cookie='aldaamelliaputri='+escape(loginform.aldaamelliaputri.value)+';path=/';document.cookie='passw0rd='+escape(loginform.passw0rd.value)+';path=/';
+      this.location.href="playmixtape.html";
+      return false;
+      }; 
+    </script>
+    <div class="global-container">
+      <div class="card login-form">
+        <div class="card-body">
+          <h3 class="card-title text-center">Log in to <span style="color: #fb6f92; text-decoration: underline;">Mixtape</span></h3>
+          <div class="card-text">
+            <form name="userform" onSubmit="return setCookie(this)">
+              <div class="form-group">
+                <label for="aldaamelliaputri">Username</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="aldaamelliaputri"
+                  name="aldaamelliaputri"
+                />
+              </div>
+              <div class="form-group">
+                <label for="passw0rd">Password</label>
+                <input
+                  type="password"
+                  class="form-control form-control-sm"
+                  id="passw0rd"
+                  name="passw0rd"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Log in
+              </button>
+            </form>
+          </div>
         </div>
-        <i id="close" class="material-icons">close</i>
       </div>
-      <ul>
-        <!-- here li list are coming from js -->
-      </ul>
     </div>
-  </div>
 
-  <script src="js/music-list.js"></script>
-  <script src="js/script.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-</body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
